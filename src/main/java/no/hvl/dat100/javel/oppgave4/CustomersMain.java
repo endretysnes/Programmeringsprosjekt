@@ -12,12 +12,30 @@ public class CustomersMain {
         System.out.println("==============");
         System.out.println();
 
-        Customers customer1 = new Customers(4);
-        Customer p1 = new Customer("Bob Johnson", "bob@example.com", 1002, PowerAgreementType.NORGESPRICE);
+        Customers customers = new Customers(5);
+        Customer p1 = new Customer("Alice Smith", "alice@example.com", 1002, PowerAgreementType.SPOTPRICE);
+        Customer p2 = new Customer("Bob Johnson", "bob@example.com", 1003, PowerAgreementType.NORGESPRICE);
+        Customer p3 = new Customer("Charlie Rose", "charlie@example.com", 1004, PowerAgreementType.POWERSUPPORT);
+        Customer p4 = new Customer("Diana Prince", "diana@example.com", 1005, PowerAgreementType.NORGESPRICE);
+        Customer p5 = new Customer("Ethan Hunt", "ethan@example.com", 1006, PowerAgreementType.POWERSUPPORT);
 
-        System.out.println(customer1.countNonNull());
+        customers.addCustomer(p1);
+        customers.addCustomer(p2);
+        customers.addCustomer(p3);
+        customers.addCustomer(p4);
+        customers.addCustomer(p5);
 
-        System.out.println(customer1.getCustomer(1002));
+        System.out.println(customers.countNonNull());
+
+        System.out.println(customers.getCustomer(1002));
+
+        System.out.println(customers.removeCustomer(1004));
+        System.out.println(customers.countNonNull());
+
+        Customer[] nyKundeTabell = customers.getCustomers();
+        for(int i = 0; i < nyKundeTabell.length; i++){
+            System.out.println(nyKundeTabell[i]);
+        }
         /*
         TODO
 

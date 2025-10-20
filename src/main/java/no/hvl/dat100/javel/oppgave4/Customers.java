@@ -41,7 +41,13 @@ public class Customers {
 
         boolean inserted = false;
 
-        // TODO
+        for(int i = 0; i < customers.length; i++){
+            if(customers[i] == null){
+                customers[i] = c;
+                inserted = true;
+                break;
+            }
+        }
 
         return inserted;
     }
@@ -49,10 +55,15 @@ public class Customers {
     // e) remove customer with given id from reference table
     public Customer removeCustomer(int customer_id) {
 
-        boolean deleted = false;
         Customer c = null;
 
-        // TODO
+        for(int i = 0; i < customers.length; i++){
+            if(customers[i] != null && customers[i].getCustomer_id() == customer_id){
+                c = customers[i];
+                customers[i] = null;
+                break;
+            }
+        }
 
         return c;
     }
@@ -60,10 +71,21 @@ public class Customers {
     // f) return reference table with all customers
     public Customer[] getCustomers() {
 
-        Customer[] customers = null;
+        int count = 0;
+        for(int i = 0; i < customers.length; i++){
+            if(customers[i] != null){
+                count++;
+            }
+        }
+        Customer[] customers1 = new Customer[count];
+        int j = 0;
+        for(int i = 0; i < customers.length; i++){
+            if(customers[i] != null){
+                customers1[j] = customers[i];
+                j++;
+            }
+        }
 
-        // TODO
-
-        return customers;
+        return customers1;
     }
 }
