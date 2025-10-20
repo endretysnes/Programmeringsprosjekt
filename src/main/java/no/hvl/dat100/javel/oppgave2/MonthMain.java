@@ -13,9 +13,17 @@ public class MonthMain {
         double[][] power_usage_month = MonthPowerData.powerusage_month;
 
         System.out.println("==============");
-        System.out.println("OPPGAVE 2");
+        System.out.println("OPPGAVE 2a - Strømforbruk hver dag");
         System.out.println("==============");
+        MonthlyPower.print_PowerUsage(power_usage_month);
+
         System.out.println();
+        System.out.println("==============");
+        System.out.println("OPPGAVE 2b - Strømpris per dag");
+        System.out.println("==============");
+        MonthlyPower.print_PowerPrices(power_prices_month);
+
+
 
         /*
         TODO
