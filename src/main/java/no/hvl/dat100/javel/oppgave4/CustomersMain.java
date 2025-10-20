@@ -12,6 +12,12 @@ public class CustomersMain {
         System.out.println("==============");
         System.out.println();
 
+        Customers customer1 = new Customers(4);
+        Customer p1 = new Customer("Bob Johnson", "bob@example.com", 1002, PowerAgreementType.NORGESPRICE);
+
+        System.out.println(customer1.countNonNull());
+
+        System.out.println(customer1.getCustomer(1002));
         /*
         TODO
 

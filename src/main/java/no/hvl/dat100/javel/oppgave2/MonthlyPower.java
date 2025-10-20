@@ -2,7 +2,7 @@ package no.hvl.dat100.javel.oppgave2;
 
 import no.hvl.dat100.javel.oppgave1.DailyPower;
 
-public class MonthlyPower {
+public class MonthlyPower{
 
 
     // a) print power usage for a month
@@ -22,7 +22,7 @@ public class MonthlyPower {
             System.out.println();
         }
     }
-}
+
 
     // c) compute total power usage for a month
     public static double computePowerUsage(double[][] usage) {
