@@ -40,8 +40,13 @@ public class MonthMain {
         System.out.println("==============");
         System.out.println("OPPGAVE 2e - Spotpris");
         System.out.println("==============");
-        System.out.println(MonthlyPower.computeSpotPrice(power_usage_month, power_prices_month));
+        System.out.printf("Totalt prisen for måneden %.2f NOK",MonthlyPower.computeSpotPrice(power_usage_month, power_prices_month));
 
+        System.out.println();
+        System.out.println("==============");
+        System.out.println("OPPGAVE 2f");
+        System.out.println("==============");
+        System.out.println(MonthlyPower.computePowerSupport(power_usage_month, power_prices_month));
         /*
         TODO
 

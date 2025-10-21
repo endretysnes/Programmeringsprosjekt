@@ -78,8 +78,18 @@ public class MonthlyPower{
     public static double computePowerSupport(double[][] usage, double[][] prices) {
 
         double support = 0;
+        double price = 0;
 
-        
+        for(int i = 0; i < usage.length; i++) {
+            for (int j = 0; j < usage[i].length; j++) {
+                price = usage[i][j] * prices[i][j];
+                if(price > 0.9375){
+                    support += (price - 0.9375) * 0.9;
+                }
+
+                //support += DailyPower.getSupport(usage[i][j], prices[i][j]);
+            }
+        }
 
         return support;
     }
