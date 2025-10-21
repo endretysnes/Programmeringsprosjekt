@@ -23,6 +23,18 @@ public class MonthMain {
         System.out.println("==============");
         MonthlyPower.print_PowerPrices(power_prices_month);
 
+        System.out.println();
+        System.out.println("==============");
+        System.out.println("OPPGAVE 2c");
+        System.out.println("==============");
+        System.out.printf("Total måndedlig forbruk: %.2f kWh", MonthlyPower.computePowerUsage(power_usage_month));
+
+        System.out.println();
+        System.out.println("==============");
+        System.out.println("OPPGAVE 2d");
+        System.out.println("==============");
+        System.out.println(MonthlyPower.exceedThreshold(power_usage_month, 5000));
+
 
 
         /*

@@ -29,7 +29,11 @@ public class MonthlyPower{
 
         double sum = 0;
 
-        
+        for(int i = 0; i < usage.length; i++){
+            for(int j = 0; j < usage[i].length; j++){
+                sum += usage[i][j];
+            }
+        }
 
         return sum;
     }
@@ -39,8 +43,18 @@ public class MonthlyPower{
 
         boolean exceeded = false;
         double usage = 0;
+        int i = 0;
+        int j = 0;
 
-        // TODO
+        while(!exceeded){
+            while(!exceeded) {
+                if (powerusage[i][j] > threshold) {
+                    exceeded = true;
+                }
+                j++;
+            }
+            i++;
+        }
 
         return exceeded;
     }
