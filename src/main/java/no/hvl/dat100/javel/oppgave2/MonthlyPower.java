@@ -44,11 +44,13 @@ public class MonthlyPower{
         boolean exceeded = false;
         double usage = 0;
         int i = 0;
-        int j = 0;
 
-        while(!exceeded){
-            while(!exceeded) {
-                if (powerusage[i][j] > threshold) {
+
+        while(i < powerusage.length && !exceeded){
+            int j = 0;
+            while(j < powerusage[i].length && !exceeded) {
+                usage += powerusage[i][j];
+                if (usage > threshold) {
                     exceeded = true;
                 }
                 j++;
@@ -74,7 +76,7 @@ public class MonthlyPower{
 
         double support = 0;
 
-        // TODO
+        
 
         return support;
     }
