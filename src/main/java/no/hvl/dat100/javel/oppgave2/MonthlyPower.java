@@ -29,7 +29,7 @@ public class MonthlyPower{
 
         double sum = 0;
 
-        // TODO
+        
 
         return sum;
     }

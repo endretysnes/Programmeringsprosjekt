@@ -19,7 +19,6 @@ public class InvoiceMain {
         Customer p4 = new Customer("Diana Prince", "diana@example.com", 1005, PowerAgreementType.NORGESPRICE);
         Customer p5 = new Customer("Ethan Hunt", "ethan@example.com", 1006, PowerAgreementType.POWERSUPPORT);
 
-        Invoice invoice = new Invoice(p1, "Januar", CustomerPowerUsageData.usage_month_customer1, CustomerPowerUsageData.);
         /*
         TODO
 
