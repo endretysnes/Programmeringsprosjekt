@@ -65,8 +65,11 @@ public class MonthlyPower{
     public static double computeSpotPrice(double[][] usage, double[][] prices) {
 
         double price = 0;
-
-        // TODO
+    for(int i = 0; i < usage.length; i++){
+        for(int j = 0; j < usage[i].length; j++){
+            price += usage[i][j] * prices[i][j];
+        }
+    }
 
         return price;
     }

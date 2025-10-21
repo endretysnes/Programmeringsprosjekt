@@ -36,6 +36,11 @@ public class MonthMain {
         System.out.println(MonthlyPower.exceedThreshold(power_usage_month, 5000));
 
 
+        System.out.println();
+        System.out.println("==============");
+        System.out.println("OPPGAVE 2e - Spotpris");
+        System.out.println("==============");
+        System.out.println(MonthlyPower.computeSpotPrice(power_usage_month, power_prices_month));
 
         /*
         TODO
