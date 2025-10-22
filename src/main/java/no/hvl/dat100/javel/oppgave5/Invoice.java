@@ -31,36 +31,33 @@ public class Invoice {
         PowerAgreementType avtale = c.getAgreement();
 
         if(avtale == PowerAgreementType.SPOTPRICE){
-            for(int i = 0; i < usage.length; i ++){
-                for(int j = 0; j < usage[i].length; j++){
-                    amount += usage[i][j] * prices[i][j];
-                }
-            }
-            System.out.println(amount);
+
+            amount = MonthlyPower.computeSpotPrice(usage, prices);
+            System.out.printf("Spotpris for %s %.2f NOK\n",month, amount);
         }
         if(avtale == PowerAgreementType.NORGESPRICE){
-            for(int i = 0; i < usage.length; i++){
-                for(int j = 0; j < usage[i].length; j++){
-                    amount += usage[i][j] * 0.5;
-                }
-            }
-            System.out.println(amount);
+            amount = MonthlyPower.computeNorgesPrice(usage);
+            System.out.printf("Norgespris for %s %.2f NOK\n", month, amount);
         }
         if(avtale == PowerAgreementType.POWERSUPPORT){
-            for(int i = 0; i < usage.length; i++){
-                for(int j = 0; j < usage[i].length; j++){
-                    amount += usage[i][j] * prices[i][j];
-                }
-            }
-            amount = amount * 0.9;
-            System.out.println(amount);
+            double support = MonthlyPower.computePowerSupport(usage, prices);
+            amount = MonthlyPower.computeSpotPrice(usage, prices);
+            amount = amount - support;
+            System.out.printf("Powersupport for %s %.2f NOK\n", month, amount);
         }
 
     }
 
     public void printInvoice() {
-
-        // TODO
-
+        System.out.println("========================");
+        System.out.println("Customer number: " + c.getCustomer_id());
+        System.out.println("Name: " + c.getName());
+        System.out.println("Email: " + c.getEmail());
+        System.out.println("Agreement: " + c.getAgreement());
+        System.out.println();
+        System.out.println("Month: " + month);
+        System.out.printf("Usage: %.2f kWh\n", MonthlyPower.computePowerUsage(usage));
+        System.out.printf("Amount: %.2f NOk\n", amount);
+        System.out.println("========================");
     }
 }

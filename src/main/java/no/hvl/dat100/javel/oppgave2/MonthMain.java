@@ -46,7 +46,13 @@ public class MonthMain {
         System.out.println("==============");
         System.out.println("OPPGAVE 2f");
         System.out.println("==============");
-        System.out.println(MonthlyPower.computePowerSupport(power_usage_month, power_prices_month));
+        System.out.printf("Total strømstøtte %.2f NOK", MonthlyPower.computePowerSupport(power_usage_month, power_prices_month));
+
+        System.out.println();
+        System.out.println("==============");
+        System.out.println("OPPGAVE 2g");
+        System.out.println("==============");
+        System.out.printf("Totaltpris for kunder med norgespris %.2f NOK", MonthlyPower.computeNorgesPrice(power_usage_month));
         /*
         TODO
 

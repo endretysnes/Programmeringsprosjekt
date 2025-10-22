@@ -87,7 +87,6 @@ public class MonthlyPower{
                     support += (price - 0.9375) * 0.9;
                 }
 
-                //support += DailyPower.getSupport(usage[i][j], prices[i][j]);
             }
         }
 
@@ -99,7 +98,9 @@ public class MonthlyPower{
 
         double price = 0;
 
-        // TODO
+        for(double[] bruk : usage){
+            price += DailyPower.computeNorgesPrice(bruk);
+        }
 
         return price;
     }
