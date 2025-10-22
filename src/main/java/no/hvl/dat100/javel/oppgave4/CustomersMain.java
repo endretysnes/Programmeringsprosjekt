@@ -25,12 +25,12 @@ public class CustomersMain {
         customers.addCustomer(p4);
         customers.addCustomer(p5);
 
-        System.out.println(customers.countNonNull());
+        System.out.println("Antall kunder: " + customers.countNonNull());
 
-        System.out.println(customers.getCustomer(1002));
+        System.out.println("Kunden er hentet: " + customers.getCustomer(1002));
 
-        System.out.println(customers.removeCustomer(1004));
-        System.out.println(customers.countNonNull());
+        System.out.println("Kunden er fjernet: " + customers.removeCustomer(1003));
+        System.out.println("Antall kunder: " + customers.countNonNull());
 
         Customer[] nyKundeTabell = customers.getCustomers();
         for(int i = 0; i < nyKundeTabell.length; i++){
